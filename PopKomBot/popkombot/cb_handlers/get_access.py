@@ -18,6 +18,11 @@ async def get_access_yes(callback: CallbackQuery):
      await bot.send_message(chat_id=new_user, text='Доступ открыт, добро пожаловать! нажми на  /start')
 
 @dp.callback_query_handler(text='get_contact')
-async def get_access_no(callback: CallbackQuery):
+async def get_contact(callback: CallbackQuery):
 
      await bot.send_message(chat_id=callback.from_user.id, text='Александр Буханцев\n+79265730771')
+
+@dp.callback_query_handler(text='not_access')
+async def get_access_no(callback: CallbackQuery):
+     new_user = callback.message.text.split('\n')[-1]
+     await bot.send_message(chat_id=new_user, text='Вам отказано в доступе, свяжитесь с разработчиком!')
