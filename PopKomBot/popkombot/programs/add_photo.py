@@ -16,7 +16,6 @@ def add_photo_preset_list(title: str, cb):
     for i in range(2, sheet.max_row + 1):
         list_preset[sheet[f'A{i}'].value] = i
     sheet.add_image(logo, f'B{list_preset.get(title)}')
-    print(list_preset)
     boook.save(f'./{cb}/Preset.xlsx')
 
 

@@ -9,4 +9,3 @@ async def add_info(message: Message):
     my_file.close()
 
     await message.answer(text='Нажми на кнопку "Добавить описание" для нужного пресета и твой текст улетит куда нужно!')
-    print(message.text)

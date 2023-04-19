@@ -39,7 +39,6 @@ def create_presets(cb):
         sheet.append([list_preset[i]])
         sheet[f'A{i + 2}'].font = Font(size=23)
         sheet.row_dimensions[i + 2].height = 200
-    print(list_preset)
 
 
 

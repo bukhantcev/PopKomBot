@@ -16,6 +16,8 @@ async def find_exit(message: Message):
     if f'{message.from_user.id}\\Partitura.xlsx' in test_file(ms):
         await message.answer_document(InputFile(f'{message.from_user.id}/Partitura.xlsx'))
     await message.answer("Ну всё, пока!))", reply_markup=types.ReplyKeyboardRemove())
+
+
     try:
         os.remove(f'./{message.from_user.id}/Preset.xlsx')
     except:
@@ -48,4 +50,13 @@ async def find_exit(message: Message):
         os.rmdir(f'{message.from_user.id}')
     except:
         print('Папки не существует')
+    new_user = message.from_user.id
+    with open('Access.txt', 'r', encoding='UTF-8') as file:
+        file = file.readlines()
+        file.remove(str(new_user))
+        for i in file:
+            if i == '\n':
+                file.remove(i)
+        with open('Access.txt', 'w', encoding='UTF-8') as fw:
+            fw.write(''.join(map(str, file)))
     print('End')

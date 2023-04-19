@@ -44,7 +44,7 @@ async def add_photo(callback: CallbackQuery):
             dict_preset[callback.message.text.split('\n')[0]] = descr
             my_file.write(str(dict_preset))
             my_file.close()
-        print(descr)
+
         os.remove(f"./{callback.from_user.id}/Photo.jpg")
         os.remove(f"./{callback.from_user.id}/Photo_id.txt")
     except:
@@ -85,7 +85,6 @@ async def add_photo(callback: CallbackQuery):
             dict_preset[callback.message.text.split('\n')[0]] = descr
             my_file.write(str(dict_preset))
             my_file.close()
-        print(descr)
         os.remove(f"./{callback.from_user.id}/Photo.jpg")
         os.remove(f"./{callback.from_user.id}/Photo_id.txt")
     except:

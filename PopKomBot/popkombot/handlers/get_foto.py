@@ -13,7 +13,6 @@ async def get_foto(message: Message):
         my_photo = open(f"./{message.from_user.id}/Photo_id.txt", "w+", encoding='UTF-8')
         my_photo.write(message.photo[-1].file_id)
         my_photo.close()
-        print(message.photo[-1].file_id)
 
 
 
@@ -23,7 +22,6 @@ async def get_foto(message: Message):
             my_file = open(f"./{message.from_user.id}/Description.txt", "w+", encoding='UTF-8')
             my_file.write(message.caption)
             my_file.close()
-            print(message.caption)
         except:
             await message.answer('Отправь мне описание')
 

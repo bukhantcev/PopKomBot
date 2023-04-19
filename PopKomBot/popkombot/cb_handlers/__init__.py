@@ -5,6 +5,7 @@ from .add_info import dp
 from .add_photo import dp
 from .edit_all import dp
 from .view_all import dp
+from .get_access import dp
 
 
 

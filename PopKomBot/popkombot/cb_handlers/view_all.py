@@ -17,8 +17,6 @@ async def view_all(callback: CallbackQuery):
     title = callback.message.text.split('\n')[0]
     descr = f'{title}\n\n{descr}'
     await bot.send_photo(photo=photo, chat_id=callback.message.chat.id, caption=descr)
-    print(photo, descr)
-    print(callback.message.chat.id)
 
 
 

@@ -37,7 +37,7 @@ def creat_part(cb):
                 if elem.find('{http://schemas.malighting.de/grandma2/xml/MA}Trigger') != None else 'Go'
             tim = child.attrib.get('basic_fade') if child.attrib.get('basic_fade') != None else "0"
             list_final.append([numb, name, tim, trig, info])
-    print(list_final)
+
 
 
 
